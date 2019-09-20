@@ -8,7 +8,7 @@ parameters:
 
 steps:
 - name: notify
-  image: projectnebula/slack-notification:latest
+  image: projectnebula/slack-notification:5e32344
   spec:
     apitoken:
        $type: Secret
