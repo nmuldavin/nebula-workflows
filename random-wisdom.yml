@@ -7,7 +7,7 @@ steps:
   image: nmuldavin/random-wisdom:latest
 - name: preach
   dependsOn:
-  - medidate
+  - meditate
   image: projectnebula/slack-notification:5e32344
   spec:
     apitoken:
