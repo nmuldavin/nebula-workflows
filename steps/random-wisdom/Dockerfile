@@ -5,6 +5,8 @@ RUN apk update \
  && apk add curl \
  && rm -rf /var/cache/apk/*
 
+WORKDIR /usr/src/random-wisdom
+
 COPY . .
 
 CMD ["./random-wisdom"]
