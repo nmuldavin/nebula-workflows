@@ -9,4 +9,4 @@ WORKDIR /usr/src/random-wisdom
 
 COPY . .
 
-CMD ["./random-wisdom"]
+ENTRYPOINT ["/usr/src/random-wisdom/random-wisdom"]
