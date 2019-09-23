@@ -4,7 +4,7 @@ parameters:
     description: Notification channel
 steps:
 - name: meditate
-  image: nmuldavin/random-wisdom:0.1.2
+  image: nmuldavin/random-wisdom:0.1.3
 - name: preach
   dependsOn:
   - meditate
