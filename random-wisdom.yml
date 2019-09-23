@@ -2,12 +2,10 @@ parameters:
   channel:
     default: "#nebula-workflows"
     description: Notification channel
-  message:
-    default: Workflow execution succeeded!
-    description: Notification message
-
 steps:
-- name: notify
+- name: meditate
+  image: nmuldavin/random-wisdom:latest
+- name: preach
   image: projectnebula/slack-notification:5e32344
   spec:
     apitoken:
@@ -17,6 +15,10 @@ steps:
        $type: Parameter
        name: channel
     message:
-       $type: Parameter
-       name: message
-    username: 'yo mama'
+       $type: Output
+       taskname: meditate
+       name: wisdom
+    username:
+      $type: Output
+      taskname: meditate
+      name: attribution

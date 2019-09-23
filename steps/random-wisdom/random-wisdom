@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CONTENT=$(cat wisdom.json)
+
+LENGTH=$(echo $CONTENT | jq '. | length')
+CHOICE=$(($RANDOM % $LENGTH))
+
+ATTRIBUTION=$(echo $CONTENT | jq ".[$CHOICE] | .attribution")
+WISDOM=$(echo $CONTENT | jq ".[$CHOICE] | .wisdom")
+
+echo $ATTRIBUTION: $WISDOM
+
+curl -X POST -d $ATTRIBUTION $METADATA_API_URL/outputs/attribution
+curl -X POST -d $WISDOM $METADATA_API_URL/outputs/wisdom
