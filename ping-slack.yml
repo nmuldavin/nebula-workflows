@@ -19,3 +19,4 @@ steps:
     message:
        $type: Parameter
        name: message
+    username: 'yo mama'
