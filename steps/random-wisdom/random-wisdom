@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CONTENT=$(cat wisdom.json)
+CONTENT=$(cat /usr/src/random-wisdom/wisdom.json)
 
 LENGTH=$(echo $CONTENT | jq '. | length')
 CHOICE=$(($RANDOM % $LENGTH))
