@@ -18,9 +18,9 @@ steps:
        name: channel
     message:
        $type: Output
-       taskname: meditate
+       taskName: meditate
        name: wisdom
     username:
       $type: Output
-      taskname: meditate
+      taskName: meditate
       name: attribution
