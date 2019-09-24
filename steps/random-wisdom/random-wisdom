@@ -5,15 +5,12 @@ CONTENT=$(cat /usr/src/random-wisdom/wisdom.json)
 LENGTH=$(echo $CONTENT | jq '. | length')
 CHOICE=$(($RANDOM % $LENGTH))
 
-ATTRIBUTION=$(echo $CONTENT | jq ".[$CHOICE] | .attribution")
-WISDOM=$(echo $CONTENT | jq ".[$CHOICE] | .wisdom")
+ATTRIBUTION=$(echo $CONTENT | jq ".[$CHOICE] | .attribution" | tr -d '"')
+WISDOM=$(echo $CONTENT | jq ".[$CHOICE] | .wisdom"| tr -d '"')
 
 echo $ATTRIBUTION: $WISDOM
 
-echo $METADATA_API_URL
+set -x
 
-echo "curl -X PUT -H \"Content-Type: text/plain\" -d $ATTRIBUTION $METADATA_API_URL/outputs/attribution"
-echo "curl -X PUT -H \"Content-Type: text/plain\" -d $WISDOM $METADATA_API_URL/outputs/wisdom"
-
-curl -X PUT -H "Content-Type: text/plain" -d $ATTRIBUTION $METADATA_API_URL/outputs/attribution
-curl -X PUT -H "Content-Type: text/plain" -d $WISDOM $METADATA_API_URL/outputs/wisdom
+curl -X PUT -H "Content-Type: text/plain" -d "$ATTRIBUTION" $METADATA_API_URL/outputs/attribution
+curl -X PUT -H "Content-Type: text/plain" -d "$WISDOM" $METADATA_API_URL/outputs/wisdom
