@@ -10,5 +10,10 @@ WISDOM=$(echo $CONTENT | jq ".[$CHOICE] | .wisdom")
 
 echo $ATTRIBUTION: $WISDOM
 
-curl -X POST -d $ATTRIBUTION $METADATA_API_URL/outputs/attribution
-curl -X POST -d $WISDOM $METADATA_API_URL/outputs/wisdom
+echo $METADATA_API_URL
+
+echo "curl -X POST -H \"Content-Type: text/plain\" -d $ATTRIBUTION $METADATA_API_URL/outputs/attribution"
+echo "curl -X POST -H \"Content-Type: text/plain\" -d $WISDOM $METADATA_API_URL/outputs/wisdom"
+
+curl -X POST -H "Content-Type: text/plain" -d $ATTRIBUTION $METADATA_API_URL/outputs/attribution
+curl -X POST -H "Content-Type: text/plain" -d $WISDOM $METADATA_API_URL/outputs/wisdom
