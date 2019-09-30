@@ -30,9 +30,7 @@ steps:
   - echo "Hello world. I am $(whoami)"
 - name: hello-world-7
   image: alpine
-  dependsOn:
-    - hello-world-6
-    - hello-world-15
+  dependsOn: hello-world-6
   input:
   - echo "Hello world. I am $(whoami)"
 - name: hello-world-8
