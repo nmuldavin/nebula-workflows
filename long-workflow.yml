@@ -3,3 +3,33 @@ steps:
   image: alpine
   input:
   - echo "Hello world. I am $(whoami)"
+- name: hello-world-2
+  image: alpine
+  dependsOn: hello-world
+  input:
+  - echo "Hello world. I am $(whoami)"
+- name: hello-world-3
+  image: alpine
+  dependsOn: hello-world-2
+  input:
+  - echo "Hello world. I am $(whoami)"
+- name: hello-world-4
+  image: alpine
+  dependsOn: hello-world-3
+  input:
+  - echo "Hello world. I am $(whoami)"
+- name: hello-world-5
+  image: alpine
+  dependsOn: hello-world-4
+  input:
+  - echo "Hello world. I am $(whoami)"
+- name: hello-world-6
+  image: alpine
+  dependsOn: hello-world-5
+  input:
+  - echo "Hello world. I am $(whoami)"
+- name: hello-world-7
+  image: alpine
+  dependsOn: hello-world-6
+  input:
+  - echo "Hello world. I am $(whoami)"
