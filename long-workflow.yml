@@ -14,7 +14,7 @@ steps:
   input:
   - echo "Hello world. I am $(whoami)"
 - name: hello-world-4
-  image: alpine
+  image alpine
   dependsOn: hello-world-3
   input:
   - echo "Hello world. I am $(whoami)"
