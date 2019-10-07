@@ -24,3 +24,4 @@ steps:
       $type: Output
       taskName: meditate
       name: attribution
+    confetti: true
