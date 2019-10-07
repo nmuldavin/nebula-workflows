@@ -39,6 +39,8 @@ steps:
     - hello-world-16
   input:
   - echo "Hello world. I am $(whoami)"
+  spec:
+    confetti: true
 - name: hello-world-8
   image: alpine
   dependsOn: hello-world
