@@ -3,3 +3,5 @@ steps:
   image: alpine
   input:
   - echo "Hello world. I am $(whoami)"
+  spec:
+    confetti: true
