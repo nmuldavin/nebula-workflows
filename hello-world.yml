@@ -1,0 +1,5 @@
+steps:
+- name: hello-world
+  image: alpine
+  input:
+  - echo "Hello world. I am $(whoami)"
