@@ -1,0 +1,6 @@
+apiVersion: v3
+steps:
+  - name: step-1
+  - image: test
+  - name: step-3
+    image: test-2
