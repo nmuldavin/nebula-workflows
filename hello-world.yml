@@ -1,6 +1,6 @@
 steps:
 - name: hello-world
-  image: alpine
+  image: docker/whalesay
   input:
   - echo "Hello world. I am $(whoami)"
   spec:
